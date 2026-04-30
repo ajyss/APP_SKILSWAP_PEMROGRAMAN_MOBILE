@@ -1,48 +1,61 @@
 package com.example.projectskillswap;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends BaseActivity {
-
-    private TextView tvWelcomeMessage;
-    private Button btnLogout;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        try {
+            setContentView(R.layout.activity_main);
 
-        // Inisialisasi view dari layout
-        tvWelcomeMessage = findViewById(R.id.tv_welcome_message);
-        btnLogout = findViewById(R.id.btn_logout);
+            BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_view);
+            
+            if (bottomNav != null) {
+                bottomNav.setOnItemSelectedListener(item -> {
+                    Fragment selectedFragment = null;
+                    int id = item.getItemId();
 
-        // (Opsional) Ambil data dari Intent jika ada
-        // Contoh: Mengambil email dari LoginActivity
-        // Intent intent = getIntent();
-        // String userEmail = intent.getStringExtra("USER_EMAIL");
-        // if (userEmail != null) {
-        //     tvWelcomeMessage.setText("Selamat Datang,\n" + userEmail);
-        // }
+                    if (id == R.id.nav_home) {
+                        selectedFragment = new HomeFragment();
+                    } else if (id == R.id.nav_analysis) {
+                        selectedFragment = new AnalysisFragment();
+                    } else if (id == R.id.nav_transactions) {
+                        selectedFragment = new SwapFragment();
+                    } else if (id == R.id.nav_category) {
+                        selectedFragment = new CategoryFragment();
+                    } else if (id == R.id.nav_profile) {
+                        selectedFragment = new ProfileFragment();
+                    }
 
-        // Atur listener untuk tombol Logout
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Buat intent untuk kembali ke LoginActivity
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-
-                // Flag ini penting untuk membersihkan histori activity sebelumnya
-                // Pengguna tidak akan bisa menekan tombol "Back" untuk kembali ke MainActivity setelah logout
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                startActivity(intent);
-                finish(); // Tutup MainActivity
+                    if (selectedFragment != null) {
+                        loadFragment(selectedFragment);
+                        return true;
+                    }
+                    return false;
+                });
             }
-        });
+
+            // Muat HomeFragment sebagai default secara aman
+            if (savedInstanceState == null) {
+                loadFragment(new HomeFragment());
+            }
+
+        } catch (Exception e) {
+            Log.e("SKILLSWAP_CRASH", "Gagal buka MainActivity: " + e.getMessage());
+        }
+    }
+
+    private void loadFragment(Fragment fragment) {
+        if (findViewById(R.id.fragment_container) != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commitAllowingStateLoss(); // Lebih aman untuk transisi cepat
+        }
     }
 }

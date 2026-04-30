@@ -1,3 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ====================================================== -->
+    <!-- Global Texts & Splash Screen -->
+    <!-- ====================================================== -->
+    <string name="app_name">SkillSwap</string>
+    <string name="logo_content_description">SkillSwapロゴ</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Onboarding Page -->
+    <!-- ====================================================== -->
+    <string name="onboarding_title_1">ようこそ\nSkillSwapへ</string>
+    <string name="onboarding_title_2">スキルを交換して\n利益を得る</string>
+    <string name="button_next">次へ</string>
+    <string name="button_start">始める</string>
+    <string name="image_onboarding_content_description">オンボーディング用のイラスト画像</string>
+    <string name="image_onboarding1">最初のオンボーディング画像</string>
+    <string name="image_onboarding2">2番目のオンボーディング画像</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Login Page -->
+    <!-- ====================================================== -->
+    <string name="login_title">アカウントにログイン</string>
+    <string name="login_button_text">ログイン</string>
+    <string name="email">メールアドレス</string>
+    <string name="kata_sandi">パスワード</string>
+    <string name="hint_password">••••••••</string>
+    <string name="login_dont_have_account">アカウントをお持ちでないですか？ 新規登録</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Register Page -->
+    <!-- ====================================================== -->
+    <string name="register_title">アカウントを作成</string>
+    <string name="register_button_text">新規登録</string>
+    <string name="nama_lengkap">氏名</string>
+    <string name="hint_full_name">氏名を入力してください</string>
+    <string name="konfirmasi_kata_sandi">パスワードを再入力</string>
+    <string name="register_already_have_account">すでにアカウントをお持ちですか？ ログイン</string>
+
+    <!-- Other strings -->
+    <string name="buat_akun">アカウントを作成</string>
+    <string name="nama_lengkap_anda">あなたの氏名</string>
+    <string name="example_example_com">example@example.com</string>
+    <string name="hint">••••••••</string>
+    <string name="hints">••••••••</string>
+    <string name="sign_up">新規登録</string>
+    <string name="already_have_an_account_log_in">すでにアカウントをお持ちですか？ ログイン</string>
 </resources>

@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Background Colors -->
-    <color name="background_dark">#05181F</color>
+    <!-- 1. PALET PREMIUM FIGMA (PRIMARY) -->
+    <color name="skillswap_bg_dark">#05181F</color>
+    <color name="skillswap_emerald">#00D09E</color>
+    <color name="skillswap_soft_green">#DFF7E2</color>
+    <color name="skillswap_light_green">#F1FFF3</color>
+    
+    <!-- 2. PALET PENDUKUNG (SECONDARY) -->
+    <color name="skillswap_card_dark">#3C3F50</color>
+    <color name="skillswap_button_dark">#262833</color>
+    <color name="skillswap_nav_bg">#BED3C0</color>
+    <color name="skillswap_blue_deep">#0068FF</color>
+    <color name="skillswap_blue_sky">#6DB6FE</color>
+    
+    <!-- 3. WARNA TEKS & SISTEM (MODERN) -->
+    <color name="skillswap_text_primary">#093030</color>
+    <color name="skillswap_text_secondary">#363130</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_soft">#F5F5F5</color>
+    <color name="text_grey">#B0B0B0</color>
+    <color name="skillswap_red_error">#FF5252</color>
 
-    <!-- Button Colors -->
-    <color name="btn_light">#DFF7E2</color>
-    <color name="btn_light_pressed">#C8E6CB</color>
-    <color name="btn_teal">#008080</color>
-    <color name="btn_teal_pressed">#006666</color>
-
-    <!-- Text Colors -->
-    <color name="text_dark">#0E3E3E</color>
-    <color name="text_white">#FFFFFF</color>
-
-    <!-- Ripple Colors -->
-    <color name="ripple_light">#B0BEC5</color>
-    <color name="ripple_teal">#004D4D</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
+    <!-- 4. ALIAS KOMPATIBILITAS (WAJIB ADA UNTUK MENCEGAH BUILD FAILED & FORCE CLOSE) -->
+    <color name="skillswap_dark_bg">#05181F</color>
+    <color name="skillswap_navbar_background">#BED3C0</color>
+    <color name="skillswap_green">#00D09E</color>
+    <color name="skillswap_primary_green">#00D09E</color>
+    <color name="skillswap_text_light">#F5F5F5</color>
+    <color name="skillswap_text_dark">#093030</color>
+    <color name="skillswap_sheet_background">#F1FFF3</color>
+    <color name="skillswap_dark_blue">#05181F</color>
+    <color name="ic_launcher_background">#05181F</color>
 </resources>

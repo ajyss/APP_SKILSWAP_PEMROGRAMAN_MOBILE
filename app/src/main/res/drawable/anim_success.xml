@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_check_path">
 
-</selector>
+    <!-- Menargetkan path 'circle' di dalam ic_check_path -->
+    <target
+        android:name="circle"
+        android:animation="@animator/draw_circle_animation" />
+
+    <!-- Menargetkan path 'check' di dalam ic_check_path -->
+    <target
+        android:name="check"
+        android:animation="@animator/draw_check_animation" />
+
+</animated-vector>

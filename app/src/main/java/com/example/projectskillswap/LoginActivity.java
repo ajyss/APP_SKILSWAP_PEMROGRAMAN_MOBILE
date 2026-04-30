@@ -1,78 +1,68 @@
 package com.example.projectskillswap;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.BackEventCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private EditText etEmail, etPassword;
-    private Button btnLogin, btnRegister;
-    private TextView tvForgotPassword;
+    private EditText etUser, etPass;
+    private FirebaseAuth mAuth;
+    private ProgressDialog loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Hubungkan kelas Java ini dengan file layout XML-nya
         setContentView(R.layout.activity_login);
 
-        // Inisialisasi semua view dari layout
-        etEmail = findViewById(R.id.et_email);
-        etPassword = findViewById(R.id.et_password);
-        btnLogin = findViewById(R.id.btn_login);
-        btnRegister = findViewById(R.id.btn_register);
-        tvForgotPassword = findViewById(R.id.tv_forgot_password);
+        mAuth = FirebaseAuth.getInstance();
+        etUser = findViewById(R.id.et_login_user);
+        etPass = findViewById(R.id.et_login_pass);
 
-        // 1. Atur listener untuk tombol "Masuk"
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Di sini Anda akan menambahkan logika validasi login
-                String email = etEmail.getText().toString();
-                String password = etPassword.getText().toString();
+        loading = new ProgressDialog(this);
+        loading.setMessage("Tunggu sebentar ya mas...");
+        loading.setCancelable(false);
 
-                // Contoh validasi sederhana
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginActivity.this, "Email dan kata sandi tidak boleh kosong", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Jika berhasil, pindah ke halaman utama (misal: MainActivity)
-                    // Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    // startActivity(intent);
-                    // finish();
-                    // Jika berhasil, pindah ke halaman utama (MainActivity)
+        findViewById(R.id.btn_masuk_submit).setOnClickListener(v -> handleLogin());
+        
+        if (findViewById(R.id.tv_btn_ke_daftar) != null) {
+            findViewById(R.id.tv_btn_ke_daftar).setOnClickListener(v -> {
+                startActivity(new Intent(this, RegisterActivity.class));
+            });
+        }
+    }
+
+    private void handleLogin() {
+        String email = etUser.getText().toString().trim();
+        String password = etPass.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Email & Password wajib diisi mas!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        loading.show();
+
+        mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this, task -> {
+                loading.dismiss();
+                if (task.isSuccessful()) {
+                    Log.d("LOGIN_SUCCESS", "Berhasil masuk, pindah ke MainActivity...");
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-                    finish(); // Tutup LoginActivity agar tidak bisa kembali
-
+                    finish();
+                } else {
+                    String error = task.getException() != null ? task.getException().getMessage() : "Gagal masuk";
+                    Toast.makeText(LoginActivity.this, "Gagal: " + error, Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-
-        // 2. Atur listener untuk tombol "Daftar"
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Pindah ke halaman RegisterActivity
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 3. Atur listener untuk "Lupa Kata Sandi" (opsional)
-        tvForgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Logika untuk halaman lupa kata sandi
-                Toast.makeText(LoginActivity.this, "Fitur Lupa Kata Sandi diklik", Toast.LENGTH_SHORT).show();
-            }
-        });
+            });
     }
 }

@@ -1,3 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ====================================================== -->
+    <!-- Global Texts & Splash Screen -->
+    <!-- ====================================================== -->
+    <string name="app_name">SkillSwap</string>
+    <string name="logo_content_description">SkillSwap商标</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Onboarding Page -->
+    <!-- ====================================================== -->
+    <string name="onboarding_title_1">欢迎来到\nSkillSwap</string>
+    <string name="onboarding_title_2">交换您的技能\n并获得收益</string>
+    <string name="button_next">下一个</string>
+    <string name="button_start">开始</string>
+    <string name="image_onboarding_content_description">入门插图</string>
+    <string name="image_onboarding1">第一个入门图片</string>
+    <string name="image_onboarding2">第二个入门图片</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Login Page -->
+    <!-- ====================================================== -->
+    <string name="login_title">登录您的帐户</string>
+    <string name="login_button_text">登录</string>
+    <string name="email">电子邮件</string>
+    <string name="kata_sandi">密码</string>
+    <string name="hint_password">••••••••</string>
+    <string name="login_dont_have_account">还没有帐户？ 注册</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Register Page -->
+    <!-- ====================================================== -->
+    <string name="register_title">创建帐户</string>
+    <string name="register_button_text">注册</string>
+    <string name="nama_lengkap">全名</string>
+    <string name="hint_full_name">输入您的全名</string>
+    <string name="konfirmasi_kata_sandi">确认密码</string>
+    <string name="register_already_have_account">已有帐户？ 登录</string>
+
+    <!-- Other strings -->
+    <string name="buat_akun">创建帐户</string>
+    <string name="nama_lengkap_anda">您的全名</string>
+    <string name="example_example_com">example@example.com</string>
+    <string name="hint">••••••••</string>
+    <string name="hints">••••••••</string>
+    <string name="sign_up">注册</string>
+    <string name="already_have_an_account_log_in">已有帐户？ 登录</string>
 </resources>

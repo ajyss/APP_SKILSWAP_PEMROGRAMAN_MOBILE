@@ -10,7 +10,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/skillswap"
+        android:src="@drawable/logo_skillswap"
         android:contentDescription="@string/logo_content_description" />
 
 </RelativeLayout>

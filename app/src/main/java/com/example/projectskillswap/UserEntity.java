@@ -11,10 +11,12 @@ public class UserEntity {
     public String fullName;
     public String email;
     public String password;
+    public int credits; // Tambahkan ini
 
-    public UserEntity(String fullName, String email, String password) {
+    public UserEntity(String fullName, String email, String password, int credits) {
         this.fullName = fullName;
         this.email = email;
         this.password = password;
+        this.credits = credits;
     }
 }

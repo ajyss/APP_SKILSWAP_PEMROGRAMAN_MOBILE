@@ -9,9 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class AnalysisFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Menggunakan layout yang ada tanpa memaksa mencari ID yang belum pasti
         return inflater.inflate(R.layout.fragment_analysis, container, false);
     }
 }

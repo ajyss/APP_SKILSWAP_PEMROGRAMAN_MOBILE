@@ -1,3 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">projectSkillSwap</string>
+
+    <!-- Navigation -->
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_analysis">Analysis</string>
+    <string name="nav_title_transactions">Swap</string>
+    <string name="nav_title_category">Category</string>
+    <string name="nav_title_profile">Profile</string>
+
+    <!-- Splash & Onboarding -->
+    <string name="logo_content_description">SkillSwap Logo</string>
+    <string name="image_onboarding_content_description">Onboarding Illustration</string>
+    <string name="onboarding_title_1">Find Your Mentor</string>
+    <string name="onboarding_title_2">Learn and Swap</string>
+    <string name="button_next">Next</string>
+    <string name="button_start">Start</string>
+
+    <!-- Auth -->
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="email">Email</string>
+    <string name="kata_sandi">Password</string>
+    <string name="konfirmasi_kata_sandi">Confirm Password</string>
+    <string name="nama_lengkap">Full Name</string>
+    <string name="login_button_text">Log In</string>
+    <string name="register_button_text">Sign Up</string>
+    <string name="login_dont_have_account">Don\'t have an account?</string>
+    <string name="register_already_have_account">Already have an account?</string>
+    <string name="hint_full_name">Enter name</string>
+    <string name="hint_password">Enter password</string>
+    <string name="example_example_com">example@mail.com</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_log_in">Log In</string>
+    <string name="nama_lengkap_anda">Nama Lengkap</string>
+
+    <!-- Home -->
+    <string name="home_trending_skills">Trending Skills</string>
+    <string name="home_top_swappers">Top Swappers</string>
+    <string name="home_greeting_user">Hai!</string>
+    <string name="home_greeting_time">Selamat Pagi</string>
+    <string name="home_your_tier">Tier</string>
+    <string name="home_your_credits">Credits</string>
+    <string name="home_your_earnings">Earnings</string>
+    <string name="home_tier_free">Gold</string>
+    <string name="home_swapped_already">Skills Swapped</string>
+    <string name="home_skill_languages">Languages</string>
+    <string name="home_skill_coding">Coding</string>
+    <string name="home_skill_designing">Designing</string>
+    <string name="home_send_swap_request">Send Swap Request</string>
+    <string name="hints">Hint</string>
+    <string name="hint">Hint</string>
+    <string name="image_onboarding1">Onboarding 1</string>
+    <string name="image_onboarding2">Onboarding 2</string>
 </resources>

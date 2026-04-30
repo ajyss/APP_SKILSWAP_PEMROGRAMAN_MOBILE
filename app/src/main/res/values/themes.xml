@@ -1,18 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- 1. Tema dasar aplikasi utama -->
-    <style name="Base.Theme.ProjectSkillSwap" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <!-- 1. TEMA UTAMA: GAYA PREMIUM DARK TEAL -->
+    <style name="Theme.ProjectSkillSwap" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Warna Status Bar & Navigation Bar Sistem -->
+        <item name="android:statusBarColor">@color/skillswap_bg_dark</item>
+        <item name="android:navigationBarColor">@color/skillswap_bg_dark</item>
+        <item name="android:windowBackground">@color/skillswap_bg_dark</item>
+        
+        <!-- Warna Primer & Sekunder Material Design -->
+        <item name="colorPrimary">@color/skillswap_emerald</item>
+        <item name="colorSecondary">@color/skillswap_soft_green</item>
     </style>
 
-    <!-- 2. Tema aplikasi yang digunakan di manifest -->
-    <style name="Theme.ProjectSkillSwap" parent="Base.Theme.ProjectSkillSwap" />
-
-    <!-- 3. Tema khusus untuk Splash Screen jika diperlukan (opsional) -->
-    <!-- Jika SplashActivity Anda tidak butuh tema khusus, style ini bisa dihapus -->
-    <style name="Theme.ProjectSkillSwap.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Contoh: membuat status bar transparan -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <!-- 2. TEMA KHUSUS SPLASH SCREEN (MENCEGAH CRASH SAAT BOOT) -->
+    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/skillswap_bg_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="windowSplashScreenAnimationDuration">800</item>
+        <item name="postSplashScreenTheme">@style/Theme.ProjectSkillSwap</item>
     </style>
 
 </resources>

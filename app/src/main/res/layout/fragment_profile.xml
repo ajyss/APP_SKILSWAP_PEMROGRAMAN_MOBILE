@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skillswap_bg_dark"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Profile -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:padding="24dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_forward"
+                android:rotation="180"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_notification"
+                app:tint="@color/white" />
+
+            <!-- Foto Profil di Atas Panel -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_main"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/profil"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp" />
+        </RelativeLayout>
+
+        <!-- White Panel List -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_premium_sheet"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:minHeight="600dp">
+
+            <TextView
+                android:id="@+id/tv_profile_name_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="John Smith"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="ID: 25030024"
+                android:textColor="@color/skillswap_text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Menu List -->
+            <LinearLayout
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_profile" app:tint="@color/skillswap_blue_sky"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Edit Profile" android:textColor="@color/skillswap_text_primary" android:textSize="16sp" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_security" app:tint="@color/skillswap_blue_sky"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Security" android:textColor="@color/skillswap_text_primary" android:textSize="16sp" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_logout_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp">
+                <ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_logout" app:tint="@color/skillswap_blue_sky"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:text="Logout" android:textColor="@color/skillswap_text_primary" android:textSize="16sp" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="120dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

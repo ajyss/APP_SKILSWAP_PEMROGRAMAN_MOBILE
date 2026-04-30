@@ -1,14 +1,32 @@
 package com.example.projectskillswap;
 
 public class ChatMessage {
+    private String sender;
+    private String receiver;
     private String message;
-    private boolean isMe;
+    private long timestamp;
 
-    public ChatMessage(String message, boolean isMe) {
-        this.message = message;
-        this.isMe = isMe;
+    public ChatMessage() {
+        // Diperlukan Firebase
     }
 
+    public ChatMessage(String sender, String receiver, String message, long timestamp) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
+        this.timestamp = timestamp;
+    }
+
+    // Getter & Setter (Wajib untuk Firebase)
+    public String getSender() { return sender; }
+    public void setSender(String sender) { this.sender = sender; }
+
+    public String getReceiver() { return receiver; }
+    public void setReceiver(String receiver) { this.receiver = receiver; }
+
     public String getMessage() { return message; }
-    public boolean isMe() { return isMe; }
+    public void setMessage(String message) { this.message = message; }
+
+    public long getTimestamp() { return timestamp; }
+    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
 }

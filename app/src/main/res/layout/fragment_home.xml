@@ -1,6 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skillswap_bg_dark">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER SECTION -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/logo_skillswap"
+                        app:tint="@color/white" />
+
+                    <!-- Container Ikon Pojok Kanan -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_home_notification"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_notification"
+                            app:tint="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/iv_home_chat"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_send"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_greeting_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Hai, Selamat Datang"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat Pagi"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <!-- STATS ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your Tier" android:textColor="@color/text_grey" android:textSize="11sp" />
+                        <TextView android:id="@+id/tv_home_tier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gold" android:textColor="@color/skillswap_emerald" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View android:layout_width="1dp" android:layout_height="30dp" android:background="#444" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your Credits" android:textColor="@color/text_grey" android:textSize="11sp" />
+                        <TextView android:id="@+id/tv_home_credits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="C 0" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View android:layout_width="1dp" android:layout_height="30dp" android:background="#444" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your Earnings" android:textColor="@color/text_grey" android:textSize="11sp" />
+                        <TextView android:id="@+id/tv_home_earnings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rp 0" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_home_info_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center"
+                    android:text="0 Skills Have Been Swapped Already!"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- MAIN CONTENT PANEL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_premium_sheet"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:minHeight="800dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trending Skills"
+                    android:textColor="@color/skillswap_text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- CATEGORY ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="85dp" android:layout_height="70dp" app:cardCornerRadius="16dp" app:cardBackgroundColor="@color/skillswap_bg_dark">
+                             <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="18dp" android:src="@drawable/ic_language" app:tint="@color/white"/>
+                        </androidx.cardview.widget.CardView>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Languages" android:textColor="@color/skillswap_emerald" android:textStyle="bold" android:textSize="11sp" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="85dp" android:layout_height="70dp" app:cardCornerRadius="16dp" app:cardBackgroundColor="@color/skillswap_bg_dark">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="18dp" android:src="@drawable/ic_code" app:tint="@color/white"/>
+                        </androidx.cardview.widget.CardView>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Coding" android:textColor="@color/skillswap_emerald" android:textStyle="bold" android:textSize="11sp" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                        <androidx.cardview.widget.CardView android:layout_width="85dp" android:layout_height="70dp" app:cardCornerRadius="16dp" app:cardBackgroundColor="@color/skillswap_bg_dark">
+                            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="18dp" android:src="@drawable/ic_design" app:tint="@color/white"/>
+                        </androidx.cardview.widget.CardView>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Designing" android:textColor="@color/skillswap_emerald" android:textStyle="bold" android:textSize="11sp" android:layout_marginTop="6dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Top Skills Swappers"
+                    android:textColor="@color/skillswap_text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_top_swappers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:nestedScrollingEnabled="false" />
+
+                <View android:layout_width="match_parent" android:layout_height="120dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_ai_mentor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:text="Tanya AI Mentor"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_ai_stars"
+        app:iconTint="@color/white"
+        app:backgroundTint="@color/skillswap_emerald" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,207 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#05181F"
-    tools:context=".RegisterActivity">
+    android:background="@color/skillswap_bg_dark"
+    android:fillViewport="true">
 
-  <!-- Judul Halaman -->
-  <TextView
-      android:id="@+id/tv_title"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:fontFamily="@font/poppins_semibold"
-      android:text="@string/buat_akun"
-      android:textColor="@android:color/white"
-      android:textSize="30sp"
-      app:layout_constraintBottom_toTopOf="@id/card_form_container"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.6" />
-
-  <!-- Kontainer Form -->
-  <androidx.cardview.widget.CardView
-      android:id="@+id/card_form_container"
-      android:layout_width="0dp"
-      android:layout_height="0dp"
-      app:cardBackgroundColor="#F1FFF3"
-      app:cardCornerRadius="40dp"
-      app:cardElevation="0dp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHeight_percent="0.85"
-      app:layout_constraintStart_toStartOf="parent">
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="24dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
-
-        <!-- Input Nama Lengkap -->
+        <!-- Header -->
         <TextView
-            android:id="@+id/label_full_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/nama_lengkap"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Buat Akun"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/et_full_name"
-            android:autofillHints="name"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="@string/nama_lengkap_anda"
-            android:inputType="textPersonName"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColorHint="#9CA3AF"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_full_name" />
-
-        <!-- Input Email -->
-        <TextView
-            android:id="@+id/label_email"
-            android:layout_width="wrap_content"
+        <!-- Premium White Sheet Panel -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/email"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_full_name" />
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_premium_sheet"
+            android:orientation="vertical"
+            android:padding="32dp">
 
-        <EditText
-            android:id="@+id/et_email"
-            android:autofillHints="email"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="@string/example_example_com"
-            android:inputType="textEmailAddress"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColorHint="#9CA3AF"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_email" />
+            <!-- Nama Lengkap -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-        <!-- Input Kata Sandi -->
-        <TextView
-            android:id="@+id/label_password"
-            android:autofillHints="newPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/kata_sandi"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_email" />
+            <EditText
+                android:id="@+id/et_reg_name"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="Masukkan nama lengkap"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
 
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/poppins_semibold
-"
-            android:hint="@string/hint"
-            android:inputType="textPassword"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColorHint="#9CA3AF"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_password" />
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-        <!-- Input Konfirmasi Kata Sandi -->
-        <TextView
-            android:id="@+id/label_confirm_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/konfirmasi_kata_sandi"
-            android:textColor="#6B7280"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_password" />
+            <EditText
+                android:id="@+id/et_reg_email"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="example@example.com"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
 
-        <EditText
-            android:id="@+id/et_confirm_password"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@drawable/edit_text_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:hint="@string/hints"
-            android:inputType="textPassword"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColorHint="#9CA3AF"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_confirm_password" />
+            <!-- Nomer Telepon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nomer Telepon"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-        <!-- Tombol Sign Up -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_signup"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/button_primary_background"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/sign_up"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_confirm_password" />
+            <EditText
+                android:id="@+id/et_reg_phone"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="+ 123 456 789"
+                android:inputType="phone"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
 
-        <!-- Link ke Login -->
-        <TextView
-            android:id="@+id/tv_go_to_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/already_have_an_account_log_in"
-            android:textColor="#6B7280"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_signup" />
+            <!-- Tanggal Lahir -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tanggal Lahir"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-  </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/et_reg_dob"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="DD / MM / YYYY"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Kata Sandi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Kata Sandi"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_reg_password"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="●●●●●●●●"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
+
+            <!-- Konfirmasi Kata Sandi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Konfirmasi Kata Sandi"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_reg_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:hint="●●●●●●●●"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="By continuing, you agree to\nTerms of Use and Privacy Policy."
+                android:textColor="@color/skillswap_text_secondary"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register_submit"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/indicator_active"
+                android:backgroundTint="@color/skillswap_emerald"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textColor="@color/skillswap_text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_btn_ke_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Already have an account? Log In"
+                android:textColor="@color/skillswap_blue_deep"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <!-- Space for scrolling -->
+            <View android:layout_width="match_parent" android:layout_height="80dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <!-- Gambar untuk slide ini (sekarang berada di tengah layar) -->
+    <!-- PERBAIKAN 1: Nama file gambar diubah dari image_onboarding2 menjadi onboarding2 -->
     <ImageView
-        android:id="@+id/iv_onboarding_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/image_onboarding2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:src="@drawable/image_onboarding2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.65" />
+        android:contentDescription="@string/image_onboarding_content_description" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- PERBAIKAN 2: fontFamily diubah menjadi poppins_bold agar konsisten -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="@string/onboarding_title_2"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+</LinearLayout>

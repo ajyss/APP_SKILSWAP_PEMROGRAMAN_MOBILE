@@ -1,48 +1,69 @@
 package com.example.projectskillswap;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
+import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
-public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.OnboardingViewHolder> {
+public class OnboardingAdapter extends PagerAdapter {
 
-    // Data untuk onboarding, misalnya gambar-gambar yang mau ditampilkan
-    private final int[] onboardingImages = {
-            R.drawable.image_onboarding1, // Pastikan Anda punya gambar ini di res/drawable
-            R.drawable.image_onboarding2  // Pastikan Anda punya gambar ini di res/drawable
-    };
+    private final Context context;
+    private final int[] images = {R.drawable.image_onboarding1, R.drawable.image_onboarding2};
+    private final OnNextClickListener nextClickListener;
+
+    public interface OnNextClickListener {
+        void onNextClick(int position);
+    }
+
+    public OnboardingAdapter(Context context, OnNextClickListener nextClickListener) {
+        this.context = context;
+        this.nextClickListener = nextClickListener;
+    }
+
+    @Override
+    public int getCount() {
+        return images.length;
+    }
+
+    @Override
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+        return view == object;
+    }
 
     @NonNull
     @Override
-    public OnboardingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Membuat view untuk setiap item dari layout
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_boarding, parent, false);
-        return new OnboardingViewHolder(view);
-    }
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        // Sekarang hanya memuat Card Putih
+        View view = inflater.inflate(R.layout.onboarding_slide, container, false);
 
-    @Override
-    public void onBindViewHolder(@NonNull OnboardingViewHolder holder, int position) {
-        // Mengatur data (gambar) untuk item di posisi tertentu
-        holder.imageView.setImageResource(onboardingImages[position]);
-    }
+        ImageView imageView = view.findViewById(R.id.iv_onboarding);
+        TextView tvBtnNext = view.findViewById(R.id.tv_btn_next);
 
-    @Override
-    public int getItemCount() {
-        // Mengembalikan jumlah total item
-        return onboardingImages.length;
-    }
-
-    // ViewHolder untuk menyimpan referensi view dari setiap item
-    static class OnboardingViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-
-        public OnboardingViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.iv_onboarding_image); // Pastikan ID ini ada di item_onboarding.xml
+        imageView.setImageResource(images[position]);
+        
+        if (position == images.length - 1) {
+            tvBtnNext.setText("Mulai");
+        } else {
+            tvBtnNext.setText("Selanjutnya");
         }
+
+        tvBtnNext.setOnClickListener(v -> {
+            if (nextClickListener != null) {
+                nextClickListener.onNextClick(position);
+            }
+        });
+
+        container.addView(view);
+        return view;
+    }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        container.removeView((View) object);
     }
 }

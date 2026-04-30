@@ -8,60 +8,62 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<ChatMessage> messageList;
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
+
+    private final List<ChatMessage> messageList;
+    private final String currentUserName;
+
     private static final int TYPE_ME = 1;
     private static final int TYPE_OTHER = 2;
 
-    public MessageAdapter(List<ChatMessage> messageList) {
+    public MessageAdapter(List<ChatMessage> messageList, String currentUserName) {
         this.messageList = messageList;
+        this.currentUserName = currentUserName;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return messageList.get(position).isMe() ? TYPE_ME : TYPE_OTHER;
+        ChatMessage message = messageList.get(position);
+        if (message.getSender() != null && message.getSender().equals(currentUserName)) {
+            return TYPE_ME;
+        } else {
+            return TYPE_OTHER;
+        }
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view;
         if (viewType == TYPE_ME) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_me, parent, false);
-            return new MeViewHolder(view);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_me, parent, false);
         } else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_other, parent, false);
-            return new OtherViewHolder(view);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_other, parent, false);
         }
+        return new MessageViewHolder(view, viewType);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         ChatMessage message = messageList.get(position);
-        if (holder instanceof MeViewHolder) {
-            ((MeViewHolder) holder).tvMessage.setText(message.getMessage());
-        } else {
-            ((OtherViewHolder) holder).tvMessage.setText(message.getMessage());
-        }
+        holder.tvMessage.setText(message.getMessage());
     }
 
     @Override
     public int getItemCount() {
-        return messageList.size();
+        return messageList != null ? messageList.size() : 0;
     }
 
-    static class MeViewHolder extends RecyclerView.ViewHolder {
+    public static class MessageViewHolder extends RecyclerView.ViewHolder {
         TextView tvMessage;
-        MeViewHolder(View itemView) {
-            super(itemView);
-            tvMessage = itemView.findViewById(R.id.tv_message_me);
-        }
-    }
 
-    static class OtherViewHolder extends RecyclerView.ViewHolder {
-        TextView tvMessage;
-        OtherViewHolder(View itemView) {
+        public MessageViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
-            tvMessage = itemView.findViewById(R.id.tv_message_other);
+            if (viewType == TYPE_ME) {
+                tvMessage = itemView.findViewById(R.id.tv_message_me);
+            } else {
+                tvMessage = itemView.findViewById(R.id.tv_message_other);
+            }
         }
     }
 }

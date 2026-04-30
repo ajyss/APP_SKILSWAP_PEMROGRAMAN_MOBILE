@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-  
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Ganti warna ini sesuai dengan tema aplikasi Anda -->
+    <solid android:color="#2C3E50" />
+
+    <!-- Radius sudut yang besar untuk efek "bubble" atau "pill" -->
+    <corners android:radius="100dp" />
+
+</shape>

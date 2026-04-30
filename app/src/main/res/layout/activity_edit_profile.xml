@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skillswap_bg_dark"
+    android:orientation="vertical">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/btn_back_edit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_forward"
+            android:rotation="180"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Edit my Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            app:cardBackgroundColor="@color/skillswap_soft_green"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_ai_stars"
+                app:tint="@color/skillswap_bg_dark" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- White Sheet Panel -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_home_sheet"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Profile Image Edit -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_edit_profile_pic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/profil"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignBottom="@id/iv_edit_profile_pic"
+                    android:layout_alignEnd="@id/iv_edit_profile_pic"
+                    app:cardBackgroundColor="@color/skillswap_emerald"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_profile"
+                        app:tint="@color/skillswap_bg_dark" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="account settings"
+                android:textColor="#093030"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Input Fields -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Username"
+                android:textColor="#093030"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_edit_username"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:paddingHorizontal="16dp"
+                android:text="John Smith"
+                android:textColor="#093030"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="phone"
+                android:textColor="#093030"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:paddingHorizontal="16dp"
+                android:text="+44 555 5555 55"
+                android:textColor="#0E3E3E"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="email address"
+                android:textColor="#093030"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/et_edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_field"
+                android:backgroundTint="@color/skillswap_soft_green"
+                android:paddingHorizontal="16dp"
+                android:text="example@example.com"
+                android:textColor="#093030"
+                android:textSize="14sp" />
+
+            <!-- Switches -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="push notifications"
+                    android:textColor="#093030"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switch_notifications"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:thumbTint="@color/white"
+                    app:trackTint="@color/skillswap_emerald"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Turn dark Theme"
+                    android:textColor="#093030"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switch_dark_theme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:thumbTint="@color/white"
+                    app:trackTint="@color/skillswap_emerald"
+                    android:checked="false" />
+            </RelativeLayout>
+
+            <!-- Update Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_update_profile"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/indicator_active"
+                android:backgroundTint="@color/skillswap_bg_dark"
+                android:text="Update Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <View android:layout_width="match_parent" android:layout_height="100dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

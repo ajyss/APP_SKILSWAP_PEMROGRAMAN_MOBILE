@@ -1,3 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ====================================================== -->
+    <!-- Global Texts & Splash Screen -->
+    <!-- ====================================================== -->
+    <string name="app_name">SkillSwap</string>
+    <string name="logo_content_description">شعار SkillSwap</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Onboarding Page -->
+    <!-- ====================================================== -->
+    <string name="onboarding_title_1">أهلاً بك في\nSkillSwap</string>
+    <string name="onboarding_title_2">تبادل مهاراتك\nواحصل على الفوائد</string>
+    <string name="button_next">التالي</string>
+    <string name="button_start">ابدأ</string>
+    <string name="image_onboarding_content_description">صورة توضيحية للترحيب</string>
+    <string name="image_onboarding1">صورة الترحيب الأولى</string>
+    <string name="image_onboarding2">صورة الترحيب الثانية</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Login Page -->
+    <!-- ====================================================== -->
+    <string name="login_title">تسجيل الدخول إلى حسابك</string>
+    <string name="login_button_text">تسجيل الدخول</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="kata_sandi">كلمة المرور</string>
+    <string name="hint_password">••••••••</string>
+    <string name="login_dont_have_account">ليس لديك حساب؟ سجل الآن</string>
+
+    <!-- ====================================================== -->
+    <!-- Texts for Register Page -->
+    <!-- ====================================================== -->
+    <string name="register_title">إنشاء حساب</string>
+    <string name="register_button_text">تسجيل</string>
+    <string name="nama_lengkap">الاسم الكامل</string>
+    <string name="hint_full_name">أدخل اسمك الكامل</string>
+    <string name="konfirmasi_kata_sandi">تأكيد كلمة المرور</string>
+    <string name="register_already_have_account">لديك حساب بالفعل؟ تسجيل الدخول</string>
+
+    <!-- Other strings -->
+    <string name="buat_akun">إنشاء حساب</string>
+    <string name="nama_lengkap_anda">اسمك الكامل</string>
+    <string name="example_example_com">example@example.com</string>
+    <string name="hint">••••••••</string>
+    <string name="hints">••••••••</string>
+    <string name="sign_up">تسجيل</string>
+    <string name="already_have_an_account_log_in">لديك حساب بالفعل؟ تسجيل الدخول</string>
 </resources>

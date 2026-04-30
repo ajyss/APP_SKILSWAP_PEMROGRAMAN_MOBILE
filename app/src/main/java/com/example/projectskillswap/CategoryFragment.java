@@ -9,9 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class CategoryFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Mengembalikan layout tanpa mencari ID yang bermasalah agar build sukses
         return inflater.inflate(R.layout.fragment_category, container, false);
     }
 }

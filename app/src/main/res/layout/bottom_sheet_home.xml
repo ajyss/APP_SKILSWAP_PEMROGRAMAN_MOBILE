@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="550dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Trending Skills Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/home_trending_skills"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <!-- Kategori Skills (Contoh, bisa diisi dengan RecyclerView) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <include layout="@layout/item_skill_category" />
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"/>
+        <include layout="@layout/item_skill_category" />
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="wrap_content"/>
+        <include layout="@layout/item_skill_category" />
+    </LinearLayout>
+
+    <!-- Top Skills Swappers Title - REFERENSI DIPERBAIKI -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Swapper Skill Teratas"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <!-- Daftar "Top Skills Swappers" -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_top_swappers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_swapper" />
+
+</LinearLayout>

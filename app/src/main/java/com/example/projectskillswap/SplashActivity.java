@@ -1,30 +1,26 @@
 package com.example.projectskillswap;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
 
 public class SplashActivity extends AppCompatActivity {
 
-    // Jeda dalam milidetik (2000ms = 2 detik)
-    private static final int SPLASH_DELAY = 2000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Handle the splash screen transition.
+        SplashScreen.installSplashScreen(this);
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
 
-        // Buat Handler untuk menunda perpindahan ke OnboardingActivity.
-        // TIDAK ADA LAGI LOGIKA BAHASA DI SINI.
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            // Buat Intent untuk pindah ke OnboardingActivity
-            Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
-            startActivity(intent);
+        // Setelah splash screen selesai, langsung pindah ke activity berikutnya.
+        // Sistem akan menunggu proses penggambaran layout selesai sebelum transisi.
+        // Anda tidak perlu Handler atau delay lagi.
 
-            // Tutup SplashActivity agar pengguna tidak bisa kembali ke sini
-            finish();
-        }, SPLASH_DELAY);
+        // Tentukan tujuan selanjutnya (misalnya Onboarding atau Main)
+        Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class); // atau MainActivity, LoginActivity, dll.
+        startActivity(intent);
+        finish(); // Pastikan activity ini ditutup agar tidak bisa kembali ke splash screen
     }
 }
