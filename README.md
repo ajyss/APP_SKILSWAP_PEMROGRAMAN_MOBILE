@@ -5,16 +5,24 @@ Platform inovatif berbasis mobile yang dirancang untuk memfasilitasi pertukaran 
 ---
 
 ## **Informasi Mahasiswa**
-*   **Nama:** [Isi Nama Anda]
-*   **NIM:** [Isi NIM Anda]
-*   **Fakultas:** [Isi Fakultas Anda]
-*   **Kelas:** [Isi Kelas Anda]
+*   **Nama:** Muhammad Aziz Tri Ramadhan
+*   **NIM:** 312410380
+*   **Fakultas:** Teknik Informatika
+*   **Kelas:** i1241c
 *   **Mata Kuliah:** Pengembangan Aplikasi Mobile
-*   **Dosen Pengampu:** [Isi Nama Dosen Anda]
+*   **Dosen Pengampu:** Donny Maulana, S.Kom., M.M.S.I.
+
+---
+
+## **TIMELINE (CLICKUP)**
+<!-- Pastikan file gambar ada di folder project mas, atau gunakan link URL -->
+<img src="timeline_clickup.png" width="100%" alt="Timeline ClickUp Project"/>
 
 ---
 
 ## **1. Analisis Storyboard: User Journey Management**
+<img src="storyboard.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+
 Storyboard **SkillSwap** dirancang untuk memetakan pengalaman pengguna (*User Experience*) secara holistik, mulai dari fase *entry point* hingga *reward system*. Alur ini terdiri dari 16 fase kritikal:
 
 *   **Entry & Authentication (1-2):** Proses onboarding dan otentikasi yang efisien untuk menjamin integritas data pengguna.
@@ -25,6 +33,8 @@ Storyboard **SkillSwap** dirancang untuk memetakan pengalaman pengguna (*User Ex
 ---
 
 ## **2. Mockup Architecture: High-Fidelity Design**
+<img src="mockup.png" width="100%" alt="Mockup UI SkillSwap"/>
+
 Mockup aplikasi ini mencerminkan transisi dari konsep abstrak menuju blueprint visual yang fungsional dengan fokus pada:
 
 *   **Seamless Onboarding:** Antarmuka login yang bersih dengan fokus pada kemudahan akses.
@@ -35,6 +45,11 @@ Mockup aplikasi ini mencerminkan transisi dari konsep abstrak menuju blueprint v
 ---
 
 ## **3. UI/UX Principles: Professional Design Language**
+<img src="ui_ux_1.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+<img src="ui_ux_2.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+<img src="ui_ux_3.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+<img src="ui_ux_4.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+
 Pengembangan **SkillSwap** mengadopsi standar **Material Design 3 (Material You)** dengan prinsip-prinsip utama:
 
 *   **Usability (Kemudahan Penggunaan):** Implementasi *Navigation Component* yang meminimalkan beban kognitif pengguna saat berpindah antar fitur utama (Home, Analysis, Swap, Category, Profile).
