@@ -15,7 +15,6 @@ Platform inovatif berbasis mobile yang dirancang untuk memfasilitasi pertukaran 
 ---
 
 ## **TIMELINE (CLICKUP)**
-<!-- Pastikan file gambar ada di folder project mas, atau gunakan link URL -->
 <img src="timeline_clickup.png" width="100%" alt="Timeline ClickUp Project"/>
 
 ---
@@ -45,10 +44,12 @@ Mockup aplikasi ini mencerminkan transisi dari konsep abstrak menuju blueprint v
 ---
 
 ## **3. UI/UX Principles: Professional Design Language**
-<img src="ui_ux_1.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
-<img src="ui_ux_2.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
-<img src="ui_ux_3.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
-<img src="ui_ux_4.png" width="100%" alt="Storyboard Aplikasi SkillSwap"/>
+<div align="center">
+  <img src="ui_ux_1.png" width="48%" alt="UI UX Design 1"/>
+  <img src="ui_ux_2.png" width="48%" alt="UI UX Design 2"/>
+  <img src="ui_ux_3.png" width="48%" alt="UI UX Design 3"/>
+  <img src="ui_ux_4.png" width="48%" alt="UI UX Design 4"/>
+</div>
 
 Pengembangan **SkillSwap** mengadopsi standar **Material Design 3 (Material You)** dengan prinsip-prinsip utama:
 
@@ -59,24 +60,39 @@ Pengembangan **SkillSwap** mengadopsi standar **Material Design 3 (Material You)
 
 ---
 
-## **4. Penjelasan Project: Technical Synopsis**
+## **4. AI Mentor Integration: Generative AI Implementation**
+<div align="center">
+  <img src="ai_home.jpeg" width="45%" alt="AI Mentor Entry Point"/> 
+  <img src="ai_chat.jpeg" width="45%" alt="AI Mentor Chat Interface"/>
+</div>
+
+Sebagai fitur unggulan, **SkillSwap** mengintegrasikan **Generative AI (Gemini Pro API)** untuk menghadirkan asisten belajar pintar. Fitur ini dirancang untuk:
+*   **Personalized Curriculum:** Membantu pengguna merancang rencana belajar mandiri sebelum melakukan swap skill.
+*   **Contextual Assistance:** Memberikan jawaban instan terkait pertanyaan teknis pada bidang keahlian tertentu.
+*   **24/7 Availability:** Memastikan pengguna mendapatkan bimbingan meskipun partner belajar sedang tidak tersedia.
+
+Secara teknis, fitur ini diimplementasikan menggunakan arsitektur *asynchronous* untuk memastikan antarmuka tetap responsif saat memproses permintaan AI yang kompleks.
+
+---
+
+## **5. Penjelasan Project: Technical Synopsis**
 **SkillSwap** bukan sekadar aplikasi, melainkan sebuah solusi cerdas yang mendemokratisasi proses belajar melalui sistem barter keahlian. Aplikasi ini dibangun dengan stack teknologi modern untuk menjamin stabilitas dan skalabilitas.
 
 ### **Fitur Utama Sistem:**
 *   **Real-time Synchronization:** Integrasi **Firebase Realtime Database** pada fitur Chat dan Notifikasi untuk memastikan pertukaran informasi tanpa latensi.
 *   **Match-Making Logic:** Mekanisme otomatisasi transaksi swap yang secara langsung berdampak pada statistik akun pengguna (*Credits & Earnings*).
-*   **AI Integration:** Implementasi **Google Generative AI** (AI Mentor) sebagai asisten virtual untuk membantu pengguna dalam merencanakan kurikulum belajar mandiri.
+*   **Smart Navigation:** Implementasi Fragment-based navigation dengan transisi yang halus antar modul.
 *   **Secure Authentication:** Protokol keamanan berlapis menggunakan **Firebase Auth** untuk melindungi data sensitif pengguna.
 
 ### **Spesifikasi Teknis:**
 *   **Platform:** Android Native (SDK 34+)
 *   **Bahasa:** Java Professional Standard
-*   **Arsitektur:** Modular UI dengan Fragment-based Navigation
 *   **Database:** Firebase Realtime Database & Auth
+*   **AI Engine:** Google Generative AI (Gemini)
 *   **UI Library:** Google Material Components, CircleImageView, ViewBinding.
 
 ---
 
 **SkillSwap** hadir untuk memecahkan hambatan biaya pendidikan tradisional dengan memanfaatkan modal intelektual komunitas sebagai penggerak utama dalam ekosistem belajar masa depan.
 
-*© 2024 SkillSwap Project - Final Project Development.*
+*© 2026 SkillSwap Project - Final Project Development.*
